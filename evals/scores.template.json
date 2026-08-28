@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "benchmarkId": "ree-live-articles-v1",
+  "instructions": "Copy this file outside evals/.artifacts, add one entry per article-format run, and record scores plus short metadata-only notes. Never paste article text or extracted images into this file.",
+  "scores": [
+    {
+      "runId": "jvns-hugo-upgrade:txt",
+      "fidelity": null,
+      "selection": null,
+      "formatCompliance": null,
+      "coherence": null,
+      "reliability": null,
+      "txtFormattingViolation": null,
+      "visiblyDefectivePdf": null,
+      "notes": ""
+    }
+  ]
+}

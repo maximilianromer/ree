@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 128" role="img" aria-labelledby="title">
+  <title id="title">REE — Really Expensive Extraction</title>
+  <rect width="460" height="128" rx="10" fill="#2B2F32"/>
+  <g transform="translate(0 0)">
+    <path fill="#ECEFF1" d="M13 16h28v10H23v76h18v10H13V16Zm74 0h28v96H87v-10h18V26H87V16Z"/>
+    <path fill="none" stroke="#ECEFF1" stroke-width="10" stroke-linecap="square" d="M34 43h22l19 21M34 64h44M34 85h22l19-21h19"/>
+  </g>
+  <text x="142" y="70" fill="#ECEFF1" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="700" letter-spacing="2">REE</text>
+  <text x="144" y="94" fill="#B8BEC2" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" letter-spacing="1.7">REALLY EXPENSIVE EXTRACTION</text>
+</svg>

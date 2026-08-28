@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "REE — Really Expensive Extraction",
+  "short_name": "REE",
+  "version": "1.0.0",
+  "description": "Extract the body a human actually meant to read with your selected model through your local Codex installation.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAshNiCdiCLdgUp9OxmT3BTwritEhDQmvhFOlLMR+npU8kTdNIm/JYXMZYku+HER+2+Kv4eOUMY6caDCcZA7Ci16SdesM5D7jopu9vt74zlS32FdhNqMD5JZfityN/p1ocrqvt/4D68lW/b9+ghLvuqx80iYkjTu/JH3iF6/E7QQ4hIAjyl4IuoUYXy6YZggZF1Jlhgdl9RHXFZZwGIKTSXzZXP/iNHSKe9M4xIP7SC+3TKkNf6bzuWHsjiSjLEiy8/JU2/0hoTW0OGmQmn5dLwdYWec7UvDreP3DGgZ9okcY+991SBh4fTOLWXU4RR2U10GpP6nCRIxdyGokWhG1p/QIDAQAB",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "nativeMessaging",
+    "storage",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Extract with REE",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

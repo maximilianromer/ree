@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.zip
+*.tgz
+.DS_Store
+.playwright-mcp/
+.ree/
+ree-output/
+fixtures/generated/
+playwright-report/
+test-results/
+tmp/
+evals/.artifacts/
+output/

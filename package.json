@@ -1,0 +1,82 @@
+{
+  "name": "ree",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Direct LLM extraction of webpages, PDFs, and images to text, Markdown, or PDF",
+  "type": "module",
+  "bin": {
+    "ree": "dist/cli.js",
+    "ree-native-host": "dist/native-host.js"
+  },
+  "files": [
+    "dist",
+    "extension",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc -p tsconfig.json && node scripts/mark-executables.mjs && npm run extension:build",
+    "clean": "node scripts/clean.mjs",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "pretest": "npm run build && npm run fixtures:generate",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:live": "npm run build && npm run fixtures:generate && cross-env REE_LIVE_TESTS=1 vitest run tests/live.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src tests scripts --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "extension:build": "node scripts/generate-icons.mjs && node scripts/build-extension.mjs",
+    "extension:zip": "npm run extension:build && node scripts/zip-extension.mjs",
+    "native:verify": "node scripts/verify-native-host.mjs",
+    "fixtures:generate": "tsx scripts/generate-fixtures.ts",
+    "evaluate:live": "tsx scripts/evaluate-live.ts"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.3",
+    "chalk": "^5.4.1",
+    "commander": "^15.0.0",
+    "jsdom": "^29.0.0",
+    "markdown-it": "^15.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "mime-types": "^3.0.1",
+    "pdfjs-dist": "^6.2.108",
+    "playwright-core": "^1.62.1",
+    "postject": "^1.0.0-alpha.6",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/jsdom": "^21.1.7",
+    "@types/markdown-it": "^14.1.2",
+    "@types/markdown-it-footnote": "^3.0.4",
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^24.10.1",
+    "archiver": "^8.0.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vitest": "^4.0.13"
+  },
+  "keywords": [
+    "document-extraction",
+    "codex",
+    "pdf",
+    "image-extraction",
+    "browser-extension"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianromer/ree.git"
+  }
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Really Expensive Extraction</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 128 128" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M13 16h28v10H23v76h18v10H13V16Zm74 0h28v96H87v-10h18V26H87V16Z"
+            />
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-width="10"
+              stroke-linecap="square"
+              d="M34 43h22l19 21M34 64h44M34 85h22l19-21h19"
+            />
+          </svg>
+          <strong>Really Expensive Extraction</strong>
+        </div>
+        <div class="header-actions">
+          <button
+            id="open-folder"
+            class="folder-button"
+            type="button"
+            aria-label="Open extraction folder"
+            title="Open extraction folder"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.5 7.5h6l2-2h9v13h-17z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <section id="idle" class="panel">
+        <fieldset class="format-field">
+          <legend>Format</legend>
+          <div class="format-selector">
+            <label>
+              <input type="radio" name="format" value="txt" />
+              <span>TXT</span>
+            </label>
+            <label>
+              <input type="radio" name="format" value="md" checked />
+              <span>Markdown</span>
+            </label>
+            <label>
+              <input type="radio" name="format" value="pdf" />
+              <span>PDF</span>
+            </label>
+          </div>
+          <small id="format-detail">Structured text with formatting.</small>
+        </fieldset>
+        <div id="image-options" class="toggle-group hidden">
+          <label class="toggle-row">
+            <span
+              ><b>Include images</b
+              ><small>Place meaningful figures in reading order</small></span
+            >
+            <input id="include-images" type="checkbox" checked />
+            <i aria-hidden="true"></i>
+          </label>
+        </div>
+        <div class="generation-options">
+          <label class="toggle-row">
+            <span
+              ><b>Fast mode</b
+              ><small
+                >Faster inference when available · higher cost</small
+              ></span
+            >
+            <input id="fast" type="checkbox" />
+            <i aria-hidden="true"></i>
+          </label>
+          <label class="model-field" for="model">
+            <span>Model</span>
+            <input
+              id="model"
+              type="text"
+              value="gpt-5.6-luna"
+              maxlength="200"
+              autocomplete="off"
+              autocapitalize="none"
+              spellcheck="false"
+            />
+          </label>
+          <label class="instructions-field" for="custom-instructions">
+            <span>Custom instructions</span>
+            <textarea
+              id="custom-instructions"
+              maxlength="4000"
+              rows="3"
+              placeholder="Add special instructions (e.g. omit all footnotes)"
+            ></textarea>
+          </label>
+        </div>
+        <button id="extract" class="primary">Extract page</button>
+      </section>
+
+      <section id="working" class="panel hidden" aria-live="polite">
+        <div class="activity"><span></span><span></span><span></span></div>
+        <p class="eyebrow">EXTRACTION IN PROGRESS</p>
+        <h2 id="stage">Preparing page</h2>
+        <p id="detail" class="description"></p>
+        <div
+          id="model-stream"
+          class="model-stream"
+          role="log"
+          aria-live="off"
+        ></div>
+        <div class="progress-meta">
+          <span id="progress-value">0%</span>
+          <span id="elapsed">0:00</span>
+        </div>
+        <div
+          id="progress-rail"
+          class="rail"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <i id="progress-fill"></i>
+        </div>
+        <p class="stay-open">
+          You can close this popup. REE will keep working.
+        </p>
+        <button id="cancel" class="secondary cancel" type="button">
+          Cancel extraction
+        </button>
+      </section>
+
+      <section id="done" class="panel hidden">
+        <div class="success-mark">✓</div>
+        <p class="eyebrow">READY</p>
+        <h2 id="result-title">Extraction complete</h2>
+        <p id="result-description" class="description"></p>
+        <div class="actions">
+          <button data-action="open-output" class="primary hidden">
+            Open PDF <span>↗</span>
+          </button>
+          <button data-action="copy" class="primary">Copy Markdown</button>
+          <button data-action="open-folder" class="secondary">
+            Open output folder <span>↗</span>
+          </button>
+        </div>
+        <button data-action="reset" class="secondary again">
+          Extract another page
+        </button>
+      </section>
+
+      <section id="error" class="panel hidden">
+        <div class="error-mark">!</div>
+        <p class="eyebrow">NEEDS ATTENTION</p>
+        <h2 id="error-title">REE couldn’t finish</h2>
+        <p id="error-detail" class="description"></p>
+        <code id="setup-command" class="command hidden"
+          >ree setup-extension</code
+        >
+        <button data-action="reset" class="primary">Try again</button>
+      </section>
+
+      <div id="toast" role="status"></div>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

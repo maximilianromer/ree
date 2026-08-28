@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "benchmarkId": "ree-live-articles-v1",
+  "description": "Ten public articles selected to exercise simple, long-form, visual, scientific, recipe, interactive, and live-blog extraction.",
+  "formats": [
+    { "id": "txt", "includeImages": false },
+    { "id": "md", "includeImages": false },
+    { "id": "pdf", "includeImages": true }
+  ],
+  "articles": [
+    {
+      "id": "jvns-hugo-upgrade",
+      "title": "Some notes on upgrading Hugo",
+      "url": "https://jvns.ca/blog/2024/10/07/some-notes-on-upgrading-hugo/",
+      "category": "technical-blog",
+      "reviewerSlot": 1
+    },
+    {
+      "id": "wait-but-why-tail-end",
+      "title": "The Tail End",
+      "url": "https://waitbutwhy.com/2015/12/the-tail-end.html",
+      "category": "long-form-illustrated-blog",
+      "reviewerSlot": 1
+    },
+    {
+      "id": "distill-feature-visualization",
+      "title": "Feature Visualization",
+      "url": "https://distill.pub/2017/feature-visualization/",
+      "category": "interactive-technical-article",
+      "reviewerSlot": 2
+    },
+    {
+      "id": "plos-clear-figures",
+      "title": "Creating clear and informative image-based figures",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001161",
+      "category": "scientific-journal-article",
+      "reviewerSlot": 2
+    },
+    {
+      "id": "rest-of-world-clean-energy",
+      "title": "The dirty road to clean energy",
+      "url": "https://restofworld.org/2022/indonesia-china-ev-nickel/",
+      "category": "visual-investigation",
+      "reviewerSlot": 3
+    },
+    {
+      "id": "noema-inhuman-mind",
+      "title": "GPT's Very Inhuman Mind",
+      "url": "https://www.noemamag.com/gpts-very-inhuman-mind/",
+      "category": "magazine-essay",
+      "reviewerSlot": 3
+    },
+    {
+      "id": "serious-eats-cookie-recipe",
+      "title": "The Food Lab's Chocolate Chip Cookies",
+      "url": "https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe",
+      "category": "recipe",
+      "reviewerSlot": 4
+    },
+    {
+      "id": "pudding-ai-visual-story",
+      "title": "Can an AI make a data-driven, visual story?",
+      "url": "https://pudding.cool/2024/07/ai/",
+      "category": "interactive-data-story",
+      "reviewerSlot": 4
+    },
+    {
+      "id": "guardian-middle-east-live",
+      "title": "Guardian Middle East live blog",
+      "url": "https://www.theguardian.com/world/live/2026/jul/23/us-iran-war-live-updates-strikes-houthis-red-sea-saudi-nuclear-deal-middle-east-crisis-latest-news",
+      "category": "reverse-chronological-live-blog",
+      "reviewerSlot": 5
+    },
+    {
+      "id": "propublica-usaid-cholera",
+      "title": "ProPublica USAID cholera investigation",
+      "url": "https://www.propublica.org/article/usaid-cholera-deaths-trump-humanitarian-aid-cuts-south-sudan",
+      "category": "investigative-news",
+      "reviewerSlot": 5
+    }
+  ]
+}

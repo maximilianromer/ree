@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">REE extraction mark</title>
+  <rect width="128" height="128" rx="24" fill="#fff"/>
+  <g transform="translate(6.4 6.4) scale(.9)">
+    <path fill="currentColor" d="M13 16h28v10H23v76h18v10H13V16Zm74 0h28v96H87v-10h18V26H87V16Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter" d="M34 43h22l19 21M34 64h44M34 85h22l19-21h19"/>
+  </g>
+</svg>

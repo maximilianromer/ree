@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Long Descent</title>
+  </head>
+  <body>
+    <article id="story">
+      <h1>The Long Descent</h1>
+      <p>Part one was present at first paint.</p>
+    </article>
+    <div style="height: 1400px"></div>
+    <script>
+      let loaded = false;
+      addEventListener("scroll", () => {
+        if (loaded || scrollY < 500) return;
+        loaded = true;
+        const story = document.querySelector("#story");
+        story.insertAdjacentHTML(
+          "beforeend",
+          "<h2>Below the cloud line</h2><p>This paragraph arrived only after a deliberate scroll.</p><p>The final instrument reading was minus forty-two.</p>",
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "maximumScore": 100,
+  "criteria": [
+    {
+      "id": "fidelity",
+      "label": "Fidelity and completeness",
+      "maximum": 35,
+      "guidance": "Preserves the article's meaningful body, metadata, ordering, quotations, lists, tables, code, captions, and other source elements appropriate to the selected format."
+    },
+    {
+      "id": "selection",
+      "label": "Body selection and furniture exclusion",
+      "maximum": 25,
+      "guidance": "Includes the intended article while excluding navigation, promotions, consent UI, related-content furniture, comments, and duplicated responsive content."
+    },
+    {
+      "id": "formatCompliance",
+      "label": "Format-specific compliance",
+      "maximum": 25,
+      "guidance": "TXT is TTS-friendly plain text only; Markdown is a faithful non-image text recreation; PDF is a legible full extraction whose selected images appear in the right locations."
+    },
+    {
+      "id": "coherence",
+      "label": "Ordering and coherence",
+      "maximum": 10,
+      "guidance": "Reads in source order with intact sentences and sections, including multicolumn or interactive sources."
+    },
+    {
+      "id": "reliability",
+      "label": "Runtime and reliability",
+      "maximum": 5,
+      "guidance": "Completes without errors or partial artifacts and meets the format's performance target."
+    }
+  ],
+  "formatChecks": {
+    "txt": [
+      "Contains only title, subtitle, byline, date, headings, prose, quotations, and plain - or numbered lists when present.",
+      "Contains no Markdown heading, emphasis, blockquote, divider, image-marker, link-destination, caption, or raw HTML syntax."
+    ],
+    "md": [
+      "Faithfully uses Markdown hierarchy, emphasis, links, lists, quotations, tables, code, separators, footnotes, equations, and textual captions when present.",
+      "Contains no embedded image or REE image marker."
+    ],
+    "pdf": [
+      "Text is searchable, links are clickable, Unicode renders correctly, and pagination has no clipping or overlap.",
+      "Tables, code, figures, captions, page transitions, and image scaling are legible; no black boxes or missing glyphs are visible."
+    ]
+  },
+  "acceptance": {
+    "minimumMedianPerFormat": 85,
+    "minimumIndividualScore": 70,
+    "txtFormattingViolationsAllowed": 0,
+    "visiblyDefectivePdfsAllowed": 0,
+    "medianRuntimeMs": {
+      "txt": 120000,
+      "md": 120000,
+      "pdf": 180000
+    },
+    "maximumCaptureAndRenderMs": 15000,
+    "maximumModelCallMs": 240000
+  }
+}
